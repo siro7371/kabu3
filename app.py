@@ -85,7 +85,8 @@ if st.button("検索開始", type="primary"):
             # スマホで見やすいようにカード形式で表示
             for index, row in df.iterrows():
                 with st.container():
-                    st.markdown(f"**{row['铭柄']} ({row['コード']})**")
+                    # 修正箇所: ここを「铭柄」から「銘柄」に直しました
+                    st.markdown(f"**{row['銘柄']} ({row['コード']})**")
                     col1, col2, col3 = st.columns(3)
                     col1.metric("株価", row['現在値'])
                     col2.metric("利回り", row['利回り'])
